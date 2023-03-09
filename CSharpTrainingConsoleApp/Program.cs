@@ -1,6 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CSharpTrainingConsoleApp;
 
+
+void printList(List<int> listToPrint, string comment)
+{
+    Console.WriteLine(comment);
+    foreach(int element in listToPrint)
+    {
+        Console.Write(element+" ");
+    }
+    Console.WriteLine();
+}
+
 for(; ; )
 {
     Console.WriteLine("Choose exercise, from 1 to 7, 100 to exit:");
@@ -36,30 +47,20 @@ for(; ; )
             Console.WriteLine(number1.myNumber.ToString());
             break;
         case 4:
-            Console.WriteLine("First 10 element from fibonaci list:");
             Fibonaci fibonaci = new Fibonaci();
-            
             int elementIndex;
             for(elementIndex = 3; elementIndex <=10; elementIndex++)
             {
                 fibonaci.addNextElement();
             }
-
-            foreach(int element in fibonaci.fibonaciList)
-            {
-                Console.WriteLine(element.ToString());
-            }
+            fibonaci.printFibonaciList("First 10 elements from Fibonaci list:");
 
             Console.WriteLine("Sum of even elements under 1000");
             Fibonaci fibonaci2 = new Fibonaci();
             Console.WriteLine(fibonaci2.sumOfEvenUnder(1000));
-            Console.WriteLine("Elements are:");
-            foreach (int element in fibonaci2.fibonaciList)
-            {
-                Console.WriteLine(element.ToString());
-            }
-
-
+            fibonaci2.printFibonaciList("Elements of Fibonaci list under 1000:");
+            List<int> evenListOfElements = fibonaci2.getEvenElements();
+            printList(evenListOfElements, "List of even elements under 1000");
             break;
         case 100: return;
 
