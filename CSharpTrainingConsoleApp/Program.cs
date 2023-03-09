@@ -35,6 +35,32 @@ for(; ; )
             }
             Console.WriteLine(number1.myNumber.ToString());
             break;
+        case 4:
+            Console.WriteLine("First 10 element from fibonaci list:");
+            Fibonaci fibonaci = new Fibonaci();
+            
+            int elementIndex;
+            for(elementIndex = 3; elementIndex <=10; elementIndex++)
+            {
+                fibonaci.addNextElement();
+            }
+
+            foreach(int element in fibonaci.fibonaciList)
+            {
+                Console.WriteLine(element.ToString());
+            }
+
+            Console.WriteLine("Sum of even elements under 1000");
+            Fibonaci fibonaci2 = new Fibonaci();
+            Console.WriteLine(fibonaci2.sumOfEvenUnder(1000));
+            Console.WriteLine("Elements are:");
+            foreach (int element in fibonaci2.fibonaciList)
+            {
+                Console.WriteLine(element.ToString());
+            }
+
+
+            break;
         case 100: return;
 
         default: Console.WriteLine("Invalid execise number!!!"); break;
