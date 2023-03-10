@@ -20,7 +20,15 @@ namespace CSharpTrainingConsoleApp
         public void addNextElement()
         {
             fibonaciList.Add(getNextElement());
-            
+        }
+
+        public void addNextNElements(int numberOfElements)
+        {
+            int elementIndex;
+            for (elementIndex = 1; elementIndex <= numberOfElements; elementIndex++)
+            {
+                addNextElement();
+            }
         }
 
         public int getNextElement()
@@ -53,8 +61,6 @@ namespace CSharpTrainingConsoleApp
         public int sumOfEvenUnder(int maxNumber)
         {
             int sum = 2;
-
-
             while (getNextElement() < maxNumber)
             {
                 addNextElement();
@@ -62,11 +68,8 @@ namespace CSharpTrainingConsoleApp
                 {
                     sum += this.fibonaciList.Last();
                 }
-
             } 
-            
             return sum;
-
         }
     }
 }
